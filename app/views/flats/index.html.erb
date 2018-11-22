@@ -1,0 +1,38 @@
+<div class="navbar-wagon">
+  <span><%= link_to 'Simple Airbnb', flats_path %></span>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <%= link_to "Add flat", new_flat_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>All our flats</h2>
+      <h5>(<%= @flats.count %> flats displayed)</h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card">
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= flat.name %></h5>
+            <p class="card-text"><%= flat.address %></p>
+            <p class="card-text">
+              <i class="fas fa-users" aria-hidden="true"><span><%= flat.number_of_guests %></span></i>
+              <i class="fas fa-euro-sign" aria-hidden="true"><span><%= flat.price_per_night %></span></i>
+            </p>
+          </div>
+          <div class="card-footer">
+             <%= link_to 'More info', flat_path(flat) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>

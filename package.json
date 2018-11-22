@@ -1,5 +1,7 @@
 {
   "name": "rails-simple-airbnb",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "mapbox-gl": "^0.51.0"
+  }
 }

@@ -1,0 +1,12 @@
+<h1>NEW</h1>
+
+<%= simple_form_for [@flat] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :price_per_night, error: 'Please type a number' %>
+  <%= f.input :number_of_guests, error: 'Please type a number' %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Back to List of Flats', flats_path %>
